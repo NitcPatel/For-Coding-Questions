@@ -1,0 +1,38 @@
+Question: intput number of food stall N and T is number of testcase, A[i] is represent number of person which stand front of stall. we have wait 
+only 1 minut for every stall if we get the food on that stall then that is the anser, ohterwise we can agine start from the first stall. 
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int a[n]={0};
+	    for(int i=0;i<n;i++)
+	        cin>>a[i];
+	   int k=1, res=0, t=0,s=0;
+	   while(k!=0){
+	       
+	       while(t<n){
+	           if(a[t]==s){
+	               k=0;
+	               res= t+1;
+	               break;
+	           }
+	           t++;s++;
+	       }
+	       if(t==n && res==0)
+	       {
+	           t=0;
+	       }
+	       else
+	        break;
+	   }
+	   cout<<res<<endl;
+	}
+	return 0;
+}
